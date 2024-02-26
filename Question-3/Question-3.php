@@ -1,21 +1,36 @@
 <?php
 
-// Variable with string value
-$numberAsString = "100";
+// Original array
+$originalArray = [1, 2, 3, 4, 5];
 
-// Type casting to integer
-$numberAsInteger = (int) $numberAsString;
+// array_pad() - Pad array to the specified length with a value
+$paddedArray = array_pad($originalArray, 7, 0);
+echo "Array after padding:\n";
+foreach ($paddedArray as $value) {
+    echo $value . " ";
+}
+echo "\n\n";
 
-// Type casting to float
-$numberAsFloat = (float) $numberAsString;
+// array_slice() - Extract a slice of the array
+$sliceArray = array_slice($originalArray, 2, 2);
+echo "Array after slicing:\n";
+foreach ($sliceArray as $value) {
+    echo $value . " ";
+}
+echo "\n\n";
 
-// Type casting to boolean
-$numberAsBoolean = (bool) $numberAsString;
+// array_splice() - Remove a portion of the array and replace it with something else
+$splicedArray = $originalArray;
+array_splice($splicedArray, 2, 2, [10, 20]);
+echo "Array after splicing:\n";
+foreach ($splicedArray as $value) {
+    echo $value . " ";
+}
+echo "\n\n";
 
-// Displaying original and type casted values
-echo "Original String: " . $numberAsString . "\n";
-echo "Type Casted to Integer: " . $numberAsInteger . "\n";
-echo "Type Casted to Float: " . $numberAsFloat . "\n";
-echo "Type Casted to Boolean: " . ($numberAsBoolean ? 'true' : 'false') . "\n";
+// list() - Assign variables as if they were an array
+list($a, $b, $c) = $originalArray;
+echo "Using list() function:\n";
+echo "a = $a, b = $b, c = $c\n";
 
 ?>

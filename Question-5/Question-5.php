@@ -1,25 +1,19 @@
 <?php
 
-// For loop example
-echo "For Loop Example:\n";
-for ($i = 1; $i <= 5; $i++) {
-    echo $i . "\n";
-}
+// Sample string to search
+$string = "The quick brown fox jumps over the lazy dog.";
 
-// While loop example
-echo "\nWhile Loop Example:\n";
-$j = 1;
-while ($j <= 5) {
-    echo $j . "\n";
-    $j++;
-}
+// Regular expression pattern to match words starting with "fox"
+$pattern = "/\bfox\w*\b/";
 
-// Do-While loop example
-echo "\nDo-While Loop Example:\n";
-$k = 1;
-do {
-    echo $k . "\n";
-    $k++;
-} while ($k <= 5);
+// Performing the regular expression match using preg_match_all()
+if (preg_match_all($pattern, $string, $matches)) {
+    echo "Matches found:\n";
+    foreach ($matches[0] as $match) {
+        echo $match . "\n";
+    }
+} else {
+    echo "No matches found.\n";
+}
 
 ?>
