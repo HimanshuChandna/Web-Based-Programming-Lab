@@ -71,19 +71,31 @@ function quickSort($arr) {
 $arr = array(64, 34, 25, 12, 22, 11, 90);
 
 // Bubble Sort
-echo "Bubble Sort: ";
-print_r(bubbleSort($arr));
+echo "\nBubble Sort:\n";
+$bubble_sort = bubbleSort($arr);
+foreach($bubble_sort as $key => $value) {
+    echo "Key: {$key} => Value: {$value}\n";
+}
 
 // Selection Sort
-echo "Selection Sort: ";
-print_r(selectionSort($arr));
+echo "\nSelection Sort:\n";
+$selection_sort = selectionSort($arr);
+foreach($selection_sort as $key => $value) {
+    echo "Key: {$key} => Value: {$value}\n";
+}
 
 // Insertion Sort
-echo "Insertion Sort: ";
-print_r(insertionSort($arr));
+echo "\nInsertion Sort:\n";
+$insertion_sort = insertionSort($arr);
+foreach($insertion_sort as $key => $value) {
+    echo "Key: {$key} => Value: {$value}\n";
+}
 
 // Quick Sort
-echo "Quick Sort: ";
-print_r(quickSort($arr));
+echo "\nQuick Sort:\n";
+$quick_sort = quickSort($arr);
+foreach($quick_sort as $key => $value) {
+    echo "Key: {$key} => Value: {$value}\n";
+}
 
 ?>
